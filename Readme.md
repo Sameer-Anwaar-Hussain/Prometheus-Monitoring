@@ -93,8 +93,8 @@ This project demonstrates a fully functional monitoring and alerting setup using
    ./alertmanager --config.file=alertmanager.yml &
    ```
 
-   ### **Configuration Placement and Service Access**
-   1. **Prometheus Configuration (prometheus.yml):**
+### **Configuration Placement and Service Access**
+ 1. **Prometheus Configuration (prometheus.yml):**
 
    - Location: Place the file in the directory where Prometheus binary    resides (e.g., /home/ubuntu/prometheus-2.52.0.linux-amd64/).
 
@@ -106,7 +106,7 @@ This project demonstrates a fully functional monitoring and alerting setup using
    **Access Prometheus:**
    Open <Instance_2_IP>:9090 in your browser.
 
-   2. **Alert Rules (alert_rules.yml)**
+ 2. **Alert Rules (alert_rules.yml)**
   - Location: Place the file in the same directory as prometheus.yml.
   - Link to Prometheus: Ensure prometheus.yml includes the following line to **load the rules:**
    ```bash
@@ -115,9 +115,11 @@ This project demonstrates a fully functional monitoring and alerting setup using
    ```
    - Restart Prometheus: Follow the steps mentioned above.
 
-   3. **Alertmanager Configuration (alertmanager.yml)**
-    - Location: Place the file in the Alertmanager directory (e.g., /home/  ubuntu/alertmanager-0.27.0.linux-amd64/).
-      **Restart Alertmanager:**
+ 3. **Alertmanager Configuration (alertmanager.yml)**
+   - Location: Place the file in the Alertmanager directory (e.g., /home/  ubuntu/alertmanager-0.27.0.linux-amd64/).
+     
+     **Restart Alertmanager:**
+
       ```bash
           pkill alertmanager
          ./alertmanager --config.file=alertmanager.yml &
@@ -126,7 +128,7 @@ This project demonstrates a fully functional monitoring and alerting setup using
       - Open <Instance_2_IP>:9093 in your browser.
 
 
-    4. **Blackbox Exporter Configuration:**
+ 4. **Blackbox Exporter Configuration:**
     - Ensure the prometheus.yml scrape job is updated for Blackbox Exporter.
     - Restart Prometheus: Follow the steps mentioned above.
   
