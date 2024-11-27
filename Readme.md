@@ -117,12 +117,12 @@ This project demonstrates a fully functional monitoring and alerting setup using
 
    3. **Alertmanager Configuration (alertmanager.yml)**
     - Location: Place the file in the Alertmanager directory (e.g., /home/  ubuntu/alertmanager-0.27.0.linux-amd64/).
-    **Restart Alertmanager:**
-     ```bash
-        pkill alertmanager
-        ./alertmanager --config.file=alertmanager.yml &
-     ```
-     **Access Alertmanager:**
+      **Restart Alertmanager:**
+      ```bash
+          pkill alertmanager
+         ./alertmanager --config.file=alertmanager.yml &
+      ```
+      **Access Alertmanager:**
       - Open <Instance_2_IP>:9093 in your browser.
 
 
