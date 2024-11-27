@@ -158,13 +158,13 @@ This project demonstrates a fully functional monitoring and alerting setup using
        smtp_auth_username: 'your_email@gmail.com'
        smtp_auth_password: '<your-app-password>'
     ```
-    4. **Restart Alertmanager:**
+    **4.Restart Alertmanager:**
     - After updating alertmanager.yml, restart Alertmanager:
      ```bash
         pkill alertmanager
         ./alertmanager --config.file=alertmanager.yml &
      ```
-    5. **Test Alerts:**
+    **5.Test Alerts:**
     - Trigger an alert (e.g., by stopping Node Exporter) and check your Gmail for notifications.
 
 
