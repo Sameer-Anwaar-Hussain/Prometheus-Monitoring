@@ -119,21 +119,21 @@ This project demonstrates a fully functional monitoring and alerting setup using
      
        **Restart Alertmanager:**
 
-          ```bash
+        ```bash
             pkill alertmanager
            ./alertmanager --config.file=alertmanager.yml &
-          ```
+        ```
       **Access Alertmanager:**
       - Open <Instance_2_IP>:9093 in your browser.
 
 
-    4. **Blackbox Exporter Configuration:**
+   4. **Blackbox Exporter Configuration:**
        - Ensure the prometheus.yml scrape job is updated for Blackbox Exporter.
        - Restart Prometheus: Follow the steps mentioned above.
   
-    5. **Node Exporter:**
-    - Node Exporter runs as a standalone binary; no additional configuration is needed.
-    - Ensure Prometheus scrape job points to <Instance_1_IP>:9100.
+   5. **Node Exporter:**
+       - Node Exporter runs as a standalone binary; no additional configuration is needed.
+       - Ensure Prometheus scrape job points to <Instance_1_IP>:9100.
 
 
 
