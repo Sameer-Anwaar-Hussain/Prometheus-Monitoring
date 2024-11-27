@@ -94,43 +94,42 @@ This project demonstrates a fully functional monitoring and alerting setup using
    ```
 
 ### **Configuration Placement and Service Access**
- 1. **Prometheus Configuration (prometheus.yml):**
+   1. **Prometheus Configuration (prometheus.yml):**
+      - Location: Place the file in the directory where Prometheus binary    resides (e.g., /home/ubuntu/prometheus-2.52.0.linux-amd64/).
 
-   - Location: Place the file in the directory where Prometheus binary    resides (e.g., /home/ubuntu/prometheus-2.52.0.linux-amd64/).
-
-   **Restart Prometheus:**
-   ```bash
-    pkill prometheus
-   ./prometheus --config.file=prometheus.yml &
-   ```
-   **Access Prometheus:**
-   Open <Instance_2_IP>:9090 in your browser.
-
- 2. **Alert Rules (alert_rules.yml)**
-  - Location: Place the file in the same directory as prometheus.yml.
-  - Link to Prometheus: Ensure prometheus.yml includes the following line to **load the rules:**
-   ```bash
-      rule_files:
-         - "alert_rules.yml"
-   ```
-   - Restart Prometheus: Follow the steps mentioned above.
-
- 3. **Alertmanager Configuration (alertmanager.yml)**
-   - Location: Place the file in the Alertmanager directory (e.g., /home/  ubuntu/alertmanager-0.27.0.linux-amd64/).
-     
-     **Restart Alertmanager:**
-
+      **Restart Prometheus:**
       ```bash
-          pkill alertmanager
-         ./alertmanager --config.file=alertmanager.yml &
+          pkill prometheus
+         ./prometheus --config.file=prometheus.yml &
       ```
+   **Access Prometheus:**
+     - Open <Instance_2_IP>:9090 in your browser.
+
+   2. **Alert Rules (alert_rules.yml)**
+       - Location: Place the file in the same directory as prometheus.yml.
+       - Link to Prometheus: Ensure prometheus.yml includes the following line to **load the rules:**
+        ```bash
+            rule_files:
+               - "alert_rules.yml"
+        ```
+        - Restart Prometheus: Follow the steps mentioned above.
+
+   3. **Alertmanager Configuration (alertmanager.yml)**
+        - Location: Place the file in the Alertmanager directory (e.g., /home/  ubuntu/alertmanager-0.27.0.linux-amd64/).
+     
+       **Restart Alertmanager:**
+
+          ```bash
+            pkill alertmanager
+           ./alertmanager --config.file=alertmanager.yml &
+          ```
       **Access Alertmanager:**
       - Open <Instance_2_IP>:9093 in your browser.
 
 
- 4. **Blackbox Exporter Configuration:**
-    - Ensure the prometheus.yml scrape job is updated for Blackbox Exporter.
-    - Restart Prometheus: Follow the steps mentioned above.
+    4. **Blackbox Exporter Configuration:**
+       - Ensure the prometheus.yml scrape job is updated for Blackbox Exporter.
+       - Restart Prometheus: Follow the steps mentioned above.
   
     5. **Node Exporter:**
     - Node Exporter runs as a standalone binary; no additional configuration is needed.
@@ -138,12 +137,12 @@ This project demonstrates a fully functional monitoring and alerting setup using
 
 
 
-   ### **Gmail Setup for Alertmanager**
+### **Gmail Setup for Alertmanager**
    
-   **1. Enable Two-Factor Authentication (2FA):**
-    - Log in to your Google account.
-    - Go to Google Account Security.
-    - Under "Signing in to Google," click 2-Step Verification and follow the prompts.
+**1. Enable Two-Factor Authentication (2FA):**
+- Log in to your Google account.
+      -  Go to Google Account Security.
+      - Under "Signing in to Google," click 2-Step Verification and follow the prompts.
 
     **2. Generate an App Password:**
     - Go to App Passwords.
